@@ -7,6 +7,7 @@ requires-python = ">=3.14"
 dependencies = [
     "boto3>=1.43.36",
     "fire>=0.7.1",
+    "pillow",
     "structlog>=26.1.0",
 ]
 
@@ -15,6 +16,9 @@ extract-layouts = "ocr.split_pages:main"
 
 [tool.uv]
 package = true
+
+[tool.setuptools.packages.find]
+include = ["ocr*"]
 
 [dependency-groups]
 dev = [
