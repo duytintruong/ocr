@@ -4,4 +4,20 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "boto3>=1.43.36",
+    "fire>=0.7.1",
+    "structlog>=26.1.0",
+]
+
+[project.scripts]
+extract-layouts = "ocr.split_pages:main"
+
+[tool.uv]
+package = true
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.19",
+    "ty>=0.0.52",
+]
